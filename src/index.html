@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Marketplace Etherum</title>
+    <!-- Import de la bibliothèque Web3 -->
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <!-- Import de votre script app.js -->
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Application Marketplace Etherum</h1>
+</header>
+
+<main>
+    <!-- Barre de recherche et tri -->
+    <div class="search-sort">
+        <input type="text" id="search-bar" placeholder="Rechercher un produit..." oninput="searchProducts()">
+        <select id="sort-options" onchange="sortProducts()">
+            <option value="name">Trier par nom</option>
+            <option value="price">Trier par prix</option>
+        </select>
+    </div>
+
+    <!-- Liste des produits -->
+    <section id="products">
+        <h2>Produits disponibles</h2>
+        <div id="product-list" class="product-container"></div>
+    </section>
+
+    <!-- Formulaire d'ajout de produit -->
+    <section id="add-product">
+        <h2>Ajouter un produit</h2>
+        <form onsubmit="addProduct(); return false;">
+            <input type="text" id="product-name" placeholder="Nom du produit" required>
+            <input type="number" id="product-price" placeholder="Prix (en ETH)" step="0.01" required>
+            <input type="url" id="product-image" placeholder="URL de l'image du produit" required>
+            <textarea id="product-description" placeholder="Description du produit" required></textarea>
+            <button type="submit">Ajouter le produit</button>
+        </form>
+    </section>
+
+    <!-- Historique des ventes -->
+    <section id="sales-history">
+        <h2>Historique des ventes</h2>
+        <ul id="sales-list"></ul>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Marketplace Etherum. Tous droits réservés.</p>
+</footer>
+</body>
+</html>
